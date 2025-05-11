@@ -1,14 +1,12 @@
 import css from './SearchBar.module.css';
 import toast, { Toaster } from 'react-hot-toast';
+import Loader from '../Loader/Loader';
 
 const SearchBar = ({ onSearch }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.currentTarget;
     const query = form.elements.query.value.trim();
-    // const form = event.currentTarget;
-    // const formData = new FormData(form);
-    // const query = formData.get('query').trim();
 
     if (query === '') {
       toast.error('Please enter a search query!');
@@ -33,17 +31,7 @@ const SearchBar = ({ onSearch }) => {
           Search
         </button>
       </form>
-      <Toaster
-        position="top-right"
-        reverseOrder={false}
-        toastOptions={{
-          duration: 2000,
-          style: {
-            background: '#333',
-            color: '#fff',
-          },
-        }}
-      />
+      <Loader />
     </header>
   );
 };

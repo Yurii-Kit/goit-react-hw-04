@@ -1,8 +1,17 @@
+.imageGallery {
+  padding-left: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
 .galleryItem {
   box-sizing: border-box;
   width: calc((100% - 48px) / 3);
   height: 200px;
-  /* position: relative; */
+  position: relative;
   border-bottom: 1px solid #808080;
   border-left: 1px solid #808080;
   border-right: 1px solid #808080;
@@ -12,14 +21,4 @@
   cursor: pointer;
   transform: scale(1.05);
   transition: all 0.3s ease-in-out;
-}
-
-.imageGallery {
-  padding: 0;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: center;
-  align-items: center;
 }

@@ -1,18 +1,21 @@
-import css from './Search.module.css';
+import css from './SearchBar.module.css';
 import toast, { Toaster } from 'react-hot-toast';
 
-const Search = ({ onSubmit }) => {
+const SearchBar = ({ onSearch }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.currentTarget;
     const query = form.elements.query.value.trim();
+    // const form = event.currentTarget;
+    // const formData = new FormData(form);
+    // const query = formData.get('query').trim();
 
     if (query === '') {
       toast.error('Please enter a search query!');
 
       return;
     }
-    onSubmit(query);
+    onSearch(query);
     form.reset();
   };
   return (
@@ -45,4 +48,4 @@ const Search = ({ onSubmit }) => {
   );
 };
 
-export default Search;
+export default SearchBar;

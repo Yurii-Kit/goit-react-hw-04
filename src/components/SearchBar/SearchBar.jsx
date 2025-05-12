@@ -8,6 +8,10 @@ const SearchBar = ({ onSearch }) => {
     const form = event.currentTarget;
     const query = form.elements.query.value.trim();
 
+    // Використання FormData для отримання даних із форми
+    // const formData = new FormData(form);
+    // const query = formData.get('query').trim(); // Отримуємо значення поля "query"
+
     if (query === '') {
       toast.error('Please enter a search query!');
 
